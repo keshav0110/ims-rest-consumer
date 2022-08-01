@@ -20,16 +20,17 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ims-rest-consumer'`, () => {
+  it(`should have as title 'Product Inventory Management System'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ims-rest-consumer');
+    expect(app.title).toEqual('Product Inventory Management System');
   });
 
-  it('should render title', () => {
+  it(`should render title in h2 tag`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ims-rest-consumer app is running!');
+      fixture.detectChanges();
+      const compiled=fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('Product Inventory Management System');
   });
+  
 });
